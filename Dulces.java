@@ -1,4 +1,4 @@
-abstract class Dulces extends Producto{
+abstract class Dulce extends Producto{
     public Dulces(int serie){
         super(serie);
     }
