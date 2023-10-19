@@ -1,9 +1,9 @@
 class CocaCola extends Bebida{
-    private Precios precio;
+
     public CocaCola(int numSerie){
         super(numSerie);
-        precio=Precios.PrecioCoca;
     }
+    public int getprecio() {return Precios.PrecioCoca.getPrecio();}
 
     public String beber(){
         return "cocacola";

@@ -3,6 +3,7 @@ class Sprite extends Bebida{
         super(numSerie);
     }
 
+    public int getprecio(){return Precios.PrecioSprite.getPrecio();}
     public String beber(){
         return "sprite";
     }
