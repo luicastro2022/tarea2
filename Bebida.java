@@ -1,10 +1,6 @@
-abstract class Bebida{
-    private int serie;
-    public Bebida(int numSerie){
-        serie = numSerie;
-    }
-    public int getSerie(){
-        return serie;
+abstract class Bebida extends Producto{
+    public Bebida(int serie){
+        super(serie);
     }
     public abstract String beber();
 }
