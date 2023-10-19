@@ -28,14 +28,13 @@ class Deposito{
             return b;
         }
     }
-    public Dulce getDulce(){
-        if(a1.size() == 0){
+    public Dulce getDulce() {
+        if (a1.size() == 0) {
             return null;
+        } else {
+            Dulce d = a3.remove(0);
+            return d;
         }
-        else{
-            Dulce d=a3.remove(0);
-        }
-
     }
     public Moneda getMoneda(){
         if(a2.size() == 0){
@@ -46,4 +45,5 @@ class Deposito{
             return m;
         }
     }
+    
 }

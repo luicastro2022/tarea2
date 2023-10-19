@@ -1,5 +1,5 @@
 abstract class Dulce extends Producto{
-    public Dulces(int serie){
+    public Dulce(int serie){
         super(serie);
     }
     public abstract String comer();
