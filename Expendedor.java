@@ -1,6 +1,9 @@
 class Expendedor{
     public static final int COCA = 1;
     public static final int SPRITE = 2;
+    public static final int SNICKER = 3;
+    public static final int SUPER8 = 4;
+
     private Deposito coca;
     private Deposito sprite;
     private Deposito monVu;

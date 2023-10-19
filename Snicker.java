@@ -1,5 +1,5 @@
-public class Doblon extends Dulces{
-    public Doblon(int serie){
+public class Snicker extends Dulces{
+    public Snicker(int serie){
         super(serie);
     }
     public String comer() {
