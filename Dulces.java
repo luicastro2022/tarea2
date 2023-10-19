@@ -1,2 +1,6 @@
-public class Dulces extends Producto{
+abstract class Dulces extends Producto{
+    public Dulces(int serie){
+        super(serie);
+    }
+    public abstract String comer();
 }
