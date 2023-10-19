@@ -6,14 +6,21 @@ class Expendedor{
 
     private Deposito coca;
     private Deposito sprite;
+    private Deposito snicker;
+    private Deposito super8;
+
     private Deposito monVu;
     private int precio;
-    public Expendedor(int numBebidas, int precioBebidas){
+    public Expendedor(int numProductos, int precioBebidas){
         coca = new Deposito();
         sprite = new Deposito();
+        snicker = new Deposito();
+        super8 = new Deposito();
         monVu = new Deposito();
+
         precio = precioBebidas;
-        for(int i=0; i<numBebidas; i++){
+
+        for(int i=0; i<numProductos; i++){
             CocaCola c = new CocaCola(100+i);
             Sprite s = new Sprite(200+i);
             coca.addBebida(c);
