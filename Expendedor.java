@@ -2,8 +2,8 @@ class Expendedor {
     public static final int COCA = 1;
     public static final int SPRITE = 2;
     public static final int FANTA = 3;
-    public static final int SNICKER = 3;
-    public static final int SUPER8 = 4;
+    public static final int SNICKER = 4;
+    public static final int SUPER8 = 5;
 
     private Deposito coca;
     private Deposito sprite;
@@ -212,7 +212,7 @@ class Expendedor {
         return null;
     }
 
-    
+
     public Moneda getVuelto () {
         return monVu.getMoneda();
     }
