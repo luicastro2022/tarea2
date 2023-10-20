@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 class Deposito{
     private ArrayList<Bebida> a1;
-    private ArrayList<Dulce> a3;
     private ArrayList<Moneda> a2;
+    private ArrayList<Dulce> a3;
     public Deposito(){
         a1=new ArrayList();
         a2=new ArrayList();
@@ -29,7 +29,7 @@ class Deposito{
         }
     }
     public Dulce getDulce() {
-        if (a1.size() == 0) {
+        if (a3.size() == 0) {
             return null;
         } else {
             Dulce d = a3.remove(0);

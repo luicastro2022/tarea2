@@ -151,7 +151,7 @@ class Expendedor {
         if (m != null) {
             x = m.getValor();
         }
-        if (n == SNICKER && m != null && x > Precios.PrecioSnicker.getPrecio()) {
+        if (n == SNICKER && m != null && x >= Precios.PrecioSnicker.getPrecio()) {
             Dulce sn = snicker.getDulce();
             if (sn != null) {
                 int m50 = (x - Precios.PrecioSnicker.getPrecio()) / 50;
@@ -178,7 +178,7 @@ class Expendedor {
                 System.out.println("No hay snickers");
             }
         }
-        if (n == SUPER8 && m != null && x > Precios.PrecioSuper8.getPrecio()){
+        else if (n == SUPER8 && m != null && x >= Precios.PrecioSuper8.getPrecio()){
             Dulce s8=super8.getDulce();
             if (s8 != null) {
                 int m50 = (x - Precios.PrecioSuper8.getPrecio()) / 50;
