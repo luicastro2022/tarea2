@@ -52,27 +52,25 @@ class Expendedor{
             System.out.println("Seleccion no valida");
         }
 
-
-
-
-
-        if(n==COCA  && m!=null && x>=precio){
+        if(n==COCA  && m!=null && x>=Precios.PrecioCoca.getPrecio()){
             Bebida c = coca.getBebida();
             if(c != null){
-                for(int i = 0; i<(x - precio)/100; i++){
-                    Moneda m100 = new Moneda100();
-                    monVu.addMoneda(m100);
-                }
+
+
+
                 return c;
             }
+
+
             else{
                 monVu.addMoneda(m);
             }
         }
-        else if(n==SPRITE && m != null && x>= precio) {
+
+        else if(n==SPRITE && m != null && x>= Precios.PrecioSprite.getPrecio()) {
             Bebida s = sprite.getBebida();
             if(s != null){
-                for(int i = 0; i<(x - precio)/100; i++){
+                for(int i = 0; i<(x - Precios.PrecioSprite.getPrecio())/100; i++){
                     Moneda m100 = new Moneda100();
                     monVu.addMoneda(m100);
                 }
