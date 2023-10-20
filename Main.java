@@ -4,15 +4,9 @@ public class Main {
 
 
         Expendedor e=new Expendedor(1);
-        Comprador c=new Comprador(m,1,e);
+        Comprador c=new Comprador(m,2,e);
 
-        e.comprarBebida(m,1);
-
-        System.out.println(c.queBebiste());
-        System.out.println(c.cuantoVuelto());
-
-
-
-
+        System.out.println(c.getSonidob());
+        System.out.println(c.getvuelto());
     }
 }

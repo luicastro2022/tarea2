@@ -1,14 +1,16 @@
 class Comprador{
     private String sonidob;
     private int vuelto;
+
     public Comprador(Moneda m, int cualProducto, Expendedor exp) {
         vuelto = 0;
 
-        Bebida b = exp.comprarBebida(m, cualProducto);
-        if (b != null) {
-            sonidob = b.beber();
+        if(cualProducto==1 || cualProducto==2 || cualProducto==3) {
+            Bebida b = exp.comprarBebida(m, cualProducto);
+            if (b != null) {
+                sonidob = b.beber();
+            }
         }
-
 
         Moneda v = exp.getVuelto();
         while (v != null) {
@@ -18,11 +20,6 @@ class Comprador{
 
     }
 
-    public int cuantoVuelto(){
-        return vuelto;
-    }
-
-    public String queBebiste(){
-        return sonidob;
-    }
+    public int getvuelto(){return vuelto;}
+    public String getSonidob(){return sonidob;}
 }
