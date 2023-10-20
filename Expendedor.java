@@ -1,6 +1,7 @@
 class Expendedor{
     public static final int COCA = 1;
     public static final int SPRITE = 2;
+    public static final int FANTA=3;
     public static final int SNICKER = 3;
     public static final int SUPER8 = 4;
 
@@ -10,15 +11,15 @@ class Expendedor{
     private Deposito snicker;
     private Deposito super8;
 
-
     private Deposito monVu;
 
-    public Expendedor(int numProductos, int precioBebidas){
+    public Expendedor(int numProductos){
         coca = new Deposito();
         sprite = new Deposito();
         snicker = new Deposito();
         super8 = new Deposito();
         monVu = new Deposito();
+        fanta=new Deposito();
 
         for(int i=0; i<numProductos; i++){
             CocaCola c = new CocaCola(100+i);
@@ -30,19 +31,31 @@ class Expendedor{
 
             coca.addBebida(c);
             sprite.addBebida(s);
+            fanta.addBebida(f);
 
+            snicker.addDulce(sn);
+            super8.addDulce(s8);
         }
     }
 
     public Bebida comprarBebida(Moneda m, int n){
+        //si la moneda no es null guardar en x su valor
         int x = 0;
-        if(m != null) {
-            x = m.getValor();
+        if(m != null) {x = m.getValor();}
+
+        int index[];
+        index=new int[4];
+
+        try{
+            int a=index[n];
+        }catch (java.lang.ArrayIndexOutOfBoundsException e){
+            System.out.println("Seleccion no valida");
         }
 
-        if((n == COCA || n == SPRITE) && x < precio){
-            monVu.addMoneda(m);
-        }
+
+
+
+
         if(n==COCA  && m!=null && x>=precio){
             Bebida c = coca.getBebida();
             if(c != null){
