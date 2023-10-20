@@ -1,8 +1,9 @@
 class Expendedor{
     public static final int COCA = 1;
     public static final int SPRITE = 2;
-    public static final int SNICKER = 3;
-    public static final int SUPER8 = 4;
+    public static final int Fanta = 3;
+    public static final int SNICKER = 4;
+    public static final int SUPER8 = 5;
 
     private Deposito coca;
     private Deposito sprite;
@@ -16,6 +17,7 @@ class Expendedor{
     public Expendedor(int numProductos, int precioBebidas){
         coca = new Deposito();
         sprite = new Deposito();
+        fanta = new Deposito();
         snicker = new Deposito();
         super8 = new Deposito();
         monVu = new Deposito();
@@ -30,6 +32,7 @@ class Expendedor{
 
             coca.addBebida(c);
             sprite.addBebida(s);
+            fanta.addBebida(p);
 
         }
     }

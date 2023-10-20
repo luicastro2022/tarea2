@@ -29,7 +29,7 @@ class Deposito{
         }
     }
     public Dulce getDulce() {
-        if (a1.size() == 0) {
+        if (a3.size() == 0) {
             return null;
         } else {
             Dulce d = a3.remove(0);
