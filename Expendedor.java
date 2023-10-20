@@ -55,9 +55,17 @@ class Expendedor{
         if(n==COCA  && m!=null && x>=Precios.PrecioCoca.getPrecio()){
             Bebida c = coca.getBebida();
             if(c != null){
+                int m50=(Precios.PrecioCoca.getPrecio()-x)/50;
+                int m100=(Precios.PrecioCoca.getPrecio()-x)/100;
+                int m500=(Precios.PrecioCoca.getPrecio()-x)/500;
+                int m1000=(Precios.PrecioCoca.getPrecio()-x)/1000;
+                int m1500=(Precios.PrecioCoca.getPrecio()-x)/1500;
 
-
-
+                for(int i=0;i<m50;i++){monVu.addMoneda(new Moneda50());}
+                for(int i=0;i<m100;i++){monVu.addMoneda(new Moneda100());}
+                for(int i=0;i<m500;i++){monVu.addMoneda(new Moneda500());}
+                for(int i=0;i<m1000;i++){monVu.addMoneda(new Moneda1000());}
+                for(int i=0;i<m1500;i++){monVu.addMoneda(new Moneda1500());}
                 return c;
             }
 
