@@ -3,7 +3,7 @@ public class Snicker extends Dulce{
         super(serie);
     }
     public String comer() {
-        return "doblon";
+        return "snicker";
     }
     public int getprecio(){return Precios.PrecioSnicker.getPrecio();}
 }

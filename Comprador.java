@@ -1,5 +1,7 @@
+
+
 class Comprador{
-    private String sonidob;
+    private String sonido;
     private int vuelto;
 
     public Comprador(Moneda m, int cualProducto, Expendedor exp) {
@@ -8,9 +10,22 @@ class Comprador{
         if(cualProducto==1 || cualProducto==2 || cualProducto==3) {
             Bebida b = exp.comprarBebida(m, cualProducto);
             if (b != null) {
-                sonidob = b.beber();
+                sonido = b.beber();
+            }
+            else{
+                System.out.println("no se pudo efectuar la compra");
             }
         }
+        else if(cualProducto==4 || cualProducto==5){
+            Dulce d = exp.comprarDulce(m, cualProducto);
+            if(d!=null){
+                sonido = d.comer();
+            }
+            else{
+                System.out.println("no se pudo efectuar la compra");
+            }
+        }
+
 
         Moneda v = exp.getVuelto();
         while (v != null) {
@@ -21,5 +36,5 @@ class Comprador{
     }
 
     public int getvuelto(){return vuelto;}
-    public String getSonidob(){return sonidob;}
+    public String getSonidob(){return sonido;}
 }
