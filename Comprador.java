@@ -10,6 +10,9 @@ class Comprador{
             if (b != null) {
                 sonidob = b.beber();
             }
+            else{
+                System.out.println("no hay bebidas");
+            }
         }
 
         Moneda v = exp.getVuelto();

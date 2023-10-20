@@ -3,7 +3,7 @@ public class Main {
         Moneda m = new Moneda100();
 
 
-        Expendedor e=new Expendedor(1);
+        Expendedor e=new Expendedor(2);
         Comprador c=new Comprador(m,2,e);
 
         System.out.println(c.getSonidob());
