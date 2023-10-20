@@ -11,7 +11,7 @@ class Comprador{
                 sonidob = b.beber();
             }
             else{
-                System.out.println("no hay bebidas");
+                System.out.println("no se pudo efectuar la compra");
             }
         }
 
