@@ -3,13 +3,16 @@ public class Main {
         Moneda m = new Moneda100();
 
 
-        Expendedor e=new Expendedor(2);
+        Expendedor e=new Expendedor(1);
         Comprador c=new Comprador(m,1,e);
 
         e.comprarBebida(m,1);
 
         System.out.println(c.queBebiste());
         System.out.println(c.cuantoVuelto());
+
+
+
 
     }
 }
