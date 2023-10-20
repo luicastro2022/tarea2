@@ -1,10 +1,5 @@
-abstract class Moneda{
-    public Moneda(){
-
-    }
-    public Moneda getSerie(){
-        return this;
-    }
-
+abstract class Moneda implements Comparable<Moneda>{
+    public Moneda(){}
     public abstract int getValor();
+
 }
