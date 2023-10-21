@@ -143,6 +143,7 @@ class Expendedor {
         }
         else {
             System.out.println("no te alcanza");
+            monVu.addMoneda(m);
         }
         return null;
     }

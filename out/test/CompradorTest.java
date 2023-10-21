@@ -1,23 +1,39 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 
-
-class CompradorTest {
+public class CompradorTest {
     @Test
-    public void testNormal(){
+    void testBebida(){
         Moneda m=new Moneda1500();
         Expendedor e=new Expendedor(1);
         Comprador c=new Comprador(m,1,e);
-
-        assertAll(()->assertEquals());
+        Assertions.assertEquals("cocacola",c.getSonidob());
+        Assertions.assertEquals(1400,c.getvuelto());
     }
-
-    public void testSinBebida(){
+    @Test
+    void testDulce(){
+        Moneda m=new Moneda1500();
+        Expendedor e=new Expendedor(1);
+        Comprador c=new Comprador(m,4,e);
+        Assertions.assertEquals("snicker",c.getSonidob());
+        Assertions.assertEquals(1050,c.getvuelto());
+    }
+    @Test
+    void testSinBebida(){
         Moneda m=new Moneda1500();
         Expendedor e=new Expendedor(0);
-        Comprador c=new Comprador(m,1,e);
+        Comprador c=new Comprador(m,2,e);
+        Assertions.assertNull(c.getSonidob());
+        Assertions.assertEquals(1500,c.getvuelto());
 
-        assertAll(()->assertEquals(null,c.getSonidob()));
-        assertAll(()->assertEquals());
     }
+    @Test
+    void testSinPlata(){
+        Moneda m=new Moneda50();
+        Expendedor e=new Expendedor(1);
+        Comprador c=new Comprador(m,3,e);
+        Assertions.assertNull(c.getSonidob());
+        Assertions.assertEquals(50,c.getvuelto());
+    }
+
 }
