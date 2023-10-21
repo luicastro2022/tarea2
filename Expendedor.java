@@ -227,7 +227,6 @@ class Expendedor {
             monVu.addMoneda(m);
             throw new PagoInsuficienteException("No hay saldo suficiente para comprar el producto");
         }
-        return null;
     }
 
 
