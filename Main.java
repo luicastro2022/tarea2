@@ -1,18 +1,35 @@
-
-
-
-
 public class Main {
     public static void main(String[] Args) throws Exception {
-        Moneda m = new Moneda50();
+
+        try {
+            Moneda m = new Moneda1500();
+            Moneda m1 = new Moneda1500();
+            Expendedor e = new Expendedor(1);
+            Comprador d = new Comprador(m, 4, e);
+            System.out.println(d.getSonidob());
+            Comprador c = new Comprador(m1, 4, e);
+
+        } catch (Exception NohayProductoException) {
+            System.out.println("no quedan productos");
+        }
 
 
-        Expendedor e=new Expendedor(0);
-        Comprador c=new Comprador(m,4,e);
+        try {
+            Moneda m = new Moneda50();
+            Expendedor e = new Expendedor(1);
+            Comprador d = new Comprador(m, 2, e);
+        }
+        catch(Exception PagoInsuficienteException){
+            System.out.println("No tienes dinero suficiente");
+        }
 
-        System.out.println(c.getvuelto());
-        System.out.println(c.getSonidob());
-
-
+        try{
+            Moneda m = null;
+            Expendedor e = new Expendedor(1);
+            Comprador d = new Comprador(m, 2, e);
+        }
+        catch(Exception PagoIncorrectoException){
+            System.out.println("Tu moneda es falsa!");
+        }
     }
 }

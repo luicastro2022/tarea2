@@ -36,5 +36,12 @@ public class CompradorTest {
 
         });
     }
-
+    @Test
+    void testSinMoneda() throws Exception{
+        Exception exception=assertThrows(PagoIncorrectoException.class,()->{
+            Moneda m = null;
+            Expendedor e = new Expendedor(1);
+            Comprador c = new Comprador(m, 3, e);
+        });
+    }
 }
