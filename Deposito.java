@@ -10,15 +10,33 @@ class Deposito{
         a3=new ArrayList();
     }
 
+    /**
+     *
+     * @param b b es un objeto de tipo bebida que se genera al momento de llenar el array con bebidas
+     */
     public void addBebida(Bebida b){
         a1.add(b);
     }
+
+    /**
+     *
+     * @param m m es un objeto del tipo moneda que se genera al momento de llenar el array con monedas
+     */
     public void addMoneda(Moneda m){
         a2.add(m);
     }
+
+    /**
+     *
+     * @param d d es un objeto del tipo dulce que se genera al momento de llenar el array con dulces
+     */
     public void addDulce(Dulce d){a3.add(d);}
 
 
+    /**
+     *
+     * @return get bebida devuelve la ultima bebida del array si es que existe
+     */
     public Bebida getBebida(){
         if(a1.size() == 0){
             return null;
@@ -28,6 +46,11 @@ class Deposito{
             return b;
         }
     }
+
+    /**
+     *
+     * @return get dulce devuelve el ulitmo dulce del array si es que existe
+     */
     public Dulce getDulce() {
         if (a3.size() == 0) {
             return null;
@@ -36,6 +59,11 @@ class Deposito{
             return d;
         }
     }
+
+    /**
+     *
+     * @return get moneda devuelve la ultima moneda del array si es que existe
+     */
     public Moneda getMoneda(){
         if(a2.size() == 0){
             return null;

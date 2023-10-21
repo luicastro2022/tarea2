@@ -1,9 +1,15 @@
 
-
 class Comprador{
     private String sonido;
     private int vuelto;
 
+    /**
+     *
+     * @param m es una moneda de cualquier valor
+     * @param cualProducto Ingresar el indice que representa cada producto
+     * @param exp una referencia al expendedor correspondiente
+     * @throws Exception Maneja las excepciones de casos limites
+     */
     public Comprador(Moneda m, int cualProducto, Expendedor exp) throws Exception {
         vuelto = 0;
 
@@ -35,6 +41,15 @@ class Comprador{
 
     }
 
+    /**
+     *
+     * @return devuelve el calculo del vuelto
+     */
     public int getvuelto(){return vuelto;}
+
+    /**
+     *
+     * @return devuelve el sonido correspondiente al producto comprado
+     */
     public String getSonidob(){return sonido;}
 }

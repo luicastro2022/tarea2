@@ -10,7 +10,7 @@ abstract class Bebida extends Producto{
 
     /**
      *
-     * @return 
+     * @return metodo para recuperar un dato private en este caso el string del nombre del producto
      */
     public abstract String beber();
 }

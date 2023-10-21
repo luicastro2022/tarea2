@@ -11,6 +11,10 @@ class Expendedor {
     public static final int SNICKER = 4;
     public static final int SUPER8 = 5;
 
+    /**
+     * creacion de los depositos
+     *
+     */
     private Deposito coca;
     private Deposito sprite;
     private Deposito fanta;
@@ -47,6 +51,13 @@ class Expendedor {
         }
     }
 
+    /**
+     * metodo usado para comprar especificamente bebidas, dados los siguientes parametros
+     * @param m una moneda valida de una valor fijo
+     * @param n identificador de cada producto
+     * @return  si la compra es exitosa devuelve la bebida sino una moneda que se añade a vuelto
+     * @throws Exception maneja las excepciones asociadas al proceso de comprar una bebida
+     */
     public Bebida comprarBebida(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor
         int x = 0;
@@ -159,6 +170,14 @@ class Expendedor {
             throw new PagoInsuficienteException("No hay saldo suficiente para comprar el producto");
         }
     }
+
+    /**
+     * Metodo para compra especificamente dulces dados los siguiente parametros
+     * @param m moneda de un valor definido
+     * @param n identificador del producto
+     * @return si la compra es exitosa devuelve el dulce correspondiente, en caso contrario la moneda como vuelto
+     * @throws Exception maneja las excepciones realcionadas al proceso de compra de un prodcuto
+     */
     public Dulce comprarDulce(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor
         int x = 0;
@@ -229,7 +248,10 @@ class Expendedor {
         }
     }
 
-
+    /**
+     * metodo usado para el calculo del vuelto contando las monedas almacenadas
+     * @return devuelve un int que corresponde al vuelto recibido despues de la compra si es que corresponde
+     */
     public Moneda getVuelto () {
         return monVu.getMoneda();
     }
