@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class CompradorTest {
     @Test
     void testBebida() throws Exception {
@@ -20,20 +22,19 @@ public class CompradorTest {
     }
     @Test
     void testSinBebida() throws Exception {
+        Exception exception=assertThrows(NoHayProductoException.class,()->{
         Moneda m=new Moneda1500();
         Expendedor e=new Expendedor(0);
         Comprador c=new Comprador(m,2,e);
-        Assertions.assertNull(c.getSonidob());
-        Assertions.assertEquals(1500,c.getvuelto());
-
-    }
+    });}
     @Test
     void testSinPlata() throws Exception {
-        Moneda m=new Moneda50();
-        Expendedor e=new Expendedor(1);
-        Comprador c=new Comprador(m,3,e);
-        Assertions.assertNull(c.getSonidob());
-        Assertions.assertEquals(50,c.getvuelto());
+        Exception exception = assertThrows(PagoInsuficienteException.class, () -> {
+            Moneda m = new Moneda50();
+            Expendedor e = new Expendedor(1);
+            Comprador c = new Comprador(m, 3, e);
+
+        });
     }
 
 }
