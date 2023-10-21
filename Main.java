@@ -12,6 +12,10 @@ public class Main {
 
         System.out.println(c.getvuelto());
         System.out.println(c.getSonidob());
+        try {
+            if(m==null){}
+        } catch(Exception PagoIncorrectoException){;}
+
 
     }
 }

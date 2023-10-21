@@ -37,7 +37,7 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int n) {
+    public Bebida comprarBebida(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor
         int x = 0;
         if (m != null) {
