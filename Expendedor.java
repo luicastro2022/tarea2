@@ -21,7 +21,7 @@ class Expendedor {
 
     /**
      * Constructor de expendedor
-     * @param numProductos es la cantidad de productos que se agregarán a los depositos
+     * @param numProductos Es la cantidad de productos que se agregara a cada deposito
      */
     public Expendedor(int numProductos) {
         coca = new Deposito();
@@ -158,7 +158,6 @@ class Expendedor {
             monVu.addMoneda(m);
             throw new PagoInsuficienteException("No hay saldo suficiente para comprar el producto");
         }
-        return null;
     }
     public Dulce comprarDulce(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor
