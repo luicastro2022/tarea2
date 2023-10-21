@@ -13,6 +13,10 @@ class Expendedor {
 
     private Deposito monVu;
 
+    /**
+     *
+     * @param numProductos Es la cantidad de productos que se agregara a cada deposito
+     */
     public Expendedor(int numProductos) {
         coca = new Deposito();
         sprite = new Deposito();
@@ -148,7 +152,6 @@ class Expendedor {
             monVu.addMoneda(m);
             throw new PagoInsuficienteException("No hay saldo suficiente para comprar el producto");
         }
-        return null;
     }
     public Dulce comprarDulce(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor

@@ -3,7 +3,7 @@
 
 
 public class Main {
-    public static void main(String[] Args) {
+    public static void main(String[] Args) throws Exception {
         Moneda m = new Moneda1500();
 
 
