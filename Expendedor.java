@@ -37,11 +37,14 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int n) throws Exception {
+    public Bebida comprarBebida(Moneda m, int n) throws PagoIncorrectoException {
         //si la moneda no es null guardar en x su valor
         int x = 0;
         if (m != null) {
             x = m.getValor();
+        }
+        if(m==null){
+            throw new PagoIncorrectoException("No usaste método de pago, intenta de nuevo");
         }
         if (n == COCA && m != null && x >= Precios.PrecioCoca.getPrecio()) {
             Bebida c = coca.getBebida();
