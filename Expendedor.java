@@ -37,7 +37,7 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int n) throws PagoIncorrectoException {
+    public Bebida comprarBebida(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor
         int x = 0;
         if (m != null) {
@@ -79,7 +79,7 @@ class Expendedor {
                 return c;
             } else {
                 monVu.addMoneda(m);
-                System.out.println("no hay CocaCola");
+                throw new NoHayProductoException("No quedan mas unidades de este producto");
             }
         }
         else if (n == SPRITE && m != null && x >= Precios.PrecioSprite.getPrecio()) {
@@ -115,7 +115,7 @@ class Expendedor {
                 return s;
             } else {
                 monVu.addMoneda(m);
-                System.out.println("No hay sprite");
+                throw new NoHayProductoException("No quedan mas unidades de este producto");
             }
         }
         else if (n == FANTA && m != null && x >= Precios.PrecioFanta.getPrecio()) {
@@ -140,21 +140,24 @@ class Expendedor {
                 return f;
             } else {
                 monVu.addMoneda(m);
-                System.out.println("No hay fanta");
+                throw new NoHayProductoException("No quedan más unidades de este producto");
             }
 
         }
         else {
-            System.out.println("no te alcanza");
             monVu.addMoneda(m);
+            throw new PagoInsuficienteException("No hay saldo suficiente para comprar el producto");
         }
         return null;
     }
-    public Dulce comprarDulce(Moneda m, int n) {
+    public Dulce comprarDulce(Moneda m, int n) throws Exception {
         //si la moneda no es null guardar en x su valor
         int x = 0;
         if (m != null) {
             x = m.getValor();
+        }
+        if(m==null){
+            throw new PagoIncorrectoException("No usaste método de pago, intenta de nuevo");
         }
         if (n == SNICKER && m != null && x >= Precios.PrecioSnicker.getPrecio()) {
             Dulce sn = snicker.getDulce();
@@ -180,7 +183,7 @@ class Expendedor {
             }
             else{
                 monVu.addMoneda(m);
-                System.out.println("No hay snickers");
+                throw new NoHayProductoException("No quedan mas unidades de este producto");
             }
         }
         else if (n == SUPER8 && m != null && x >= Precios.PrecioSuper8.getPrecio()){
@@ -207,12 +210,13 @@ class Expendedor {
             }
             else{
                 monVu.addMoneda(m);
-                System.out.println("No hay super8");
+                throw new NoHayProductoException("No quedan mas unidades de este producto");
             }
         }
 
         else{
-            System.out.println("no te alcanza");
+            monVu.addMoneda(m);
+            throw new PagoInsuficienteException("No hay saldo suficiente para comprar el producto");
         }
         return null;
     }

@@ -4,7 +4,7 @@ class Comprador{
     private String sonido;
     private int vuelto;
 
-    public Comprador(Moneda m, int cualProducto, Expendedor exp) throws PagoIncorrectoException {
+    public Comprador(Moneda m, int cualProducto, Expendedor exp) throws Exception {
         vuelto = 0;
 
         if(cualProducto==1 || cualProducto==2 || cualProducto==3) {
