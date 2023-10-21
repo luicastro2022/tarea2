@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Assertions;
 
 public class CompradorTest {
     @Test
-    void testBebida(){
+    void testBebida() throws PagoIncorrectoException {
         Moneda m=new Moneda1500();
         Expendedor e=new Expendedor(1);
         Comprador c=new Comprador(m,1,e);
@@ -11,7 +11,7 @@ public class CompradorTest {
         Assertions.assertEquals(1400,c.getvuelto());
     }
     @Test
-    void testDulce(){
+    void testDulce() throws PagoIncorrectoException {
         Moneda m=new Moneda1500();
         Expendedor e=new Expendedor(1);
         Comprador c=new Comprador(m,4,e);
@@ -19,7 +19,7 @@ public class CompradorTest {
         Assertions.assertEquals(1050,c.getvuelto());
     }
     @Test
-    void testSinBebida(){
+    void testSinBebida() throws PagoIncorrectoException {
         Moneda m=new Moneda1500();
         Expendedor e=new Expendedor(0);
         Comprador c=new Comprador(m,2,e);
@@ -28,7 +28,7 @@ public class CompradorTest {
 
     }
     @Test
-    void testSinPlata(){
+    void testSinPlata() throws PagoIncorrectoException {
         Moneda m=new Moneda50();
         Expendedor e=new Expendedor(1);
         Comprador c=new Comprador(m,3,e);
