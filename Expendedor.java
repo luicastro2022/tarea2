@@ -1,4 +1,10 @@
+/**
+ * Un expendedor que  ofrece los productos al cliente
+ */
 class Expendedor {
+    /**
+     * Valores para seleccionar los productos
+     */
     public static final int COCA = 1;
     public static final int SPRITE = 2;
     public static final int FANTA=3;
@@ -13,6 +19,10 @@ class Expendedor {
 
     private Deposito monVu;
 
+    /**
+     * Constructor de expendedor
+     * @param numProductos es la cantidad de productos que se agregarán a los depositos
+     */
     public Expendedor(int numProductos) {
         coca = new Deposito();
         sprite = new Deposito();
